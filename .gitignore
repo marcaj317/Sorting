@@ -3,23 +3,21 @@
 using namespace std;
 
 void ascending(double x[]){
-	int i, j, k, num;
-	for(i = 0; i <= sizeof(x) - 1; i++){
-		k = i;
-		for(j = i + 1; j <= sizeof(x) - 1; j++){
-			if(x[j] < x[k])
-				k = j;
-			num = x[k];
-			x[k] = x[i];
-			x[j] = num;
+	int i, j, num;
+	for(i = 0; i < sizeof(x) - 1; i++){
+		for(j = i; j < sizeof(x) - 1; j++){
+			if(x[i] > x[j]){
+				num = x[i];
+				x[i] = x[j];
+				x[j] = num;
+			}
 		}
-		
 	}
 }
 int main(void){
 	double x[ ] = {2.5, 1.5, 4.0, 7.0, 3.5, 6.5, 8.5, 1.0}; 
 	ascending(x);
-	for(int l = 0; l <= sizeof(x) -1; l++){
+	for(int l = 0; l <= sizeof(x) - 1; l++){
 		printf("%f \n", x[l]);
 	}
 	system("pause");
