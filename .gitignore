@@ -4,8 +4,8 @@ using namespace std;
 
 void ascending(double x[]){
 	int i, j, num;
-	for(i = 0; i < sizeof(x) - 1; i++){
-		for(j = i; j < sizeof(x) - 1; j++){
+	for(i = 0; i < sizeof(x); i++){
+		for(j = i; j < sizeof(x); j++){
 			if(x[i] > x[j]){
 				num = x[i];
 				x[i] = x[j];
